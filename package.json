@@ -1,0 +1,25 @@
+{
+  "name": "@acharyamanish/litescript",
+  "version": "0.0.1",
+  "description": "litescript",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "homepage": "https://github.com/acharyamanish006/LiteScript",
+  "repository": {
+    "url": "git+https://github.com/acharyamanish006/LiteScript.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup"
+  },
+  "keywords": [
+    "litescript"
+  ],
+  "author": "acharya_Manish",
+  "license": "MIT",
+  "devDependencies": {
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  }
+}
