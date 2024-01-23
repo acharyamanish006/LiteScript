@@ -1,15 +1,15 @@
 import { Lexer } from "./lexer"
-import { Parser } from "./parser";
+import { Parser } from "./parser"
 
-let code = `let ab = 88`
+let code = `let ab = 88 "" func hey(){}`
 
 
-let intre = new Lexer(code);
+let Interpreter = new Lexer(code);
 
-let tok = intre.Tokenize();
+let tok = Interpreter.Tokenize();
 
 
 console.log(tok)
-let par= new Parser(tok);
+let parser= new Parser(tok);
 
-par.parse()
+parser.parse()

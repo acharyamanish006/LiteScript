@@ -38,12 +38,33 @@ class Parser{
 
     }
 
-    
-
-
-
     public function_Declaration(){
-
+        if(!(this.Token_List[this.currentIndex].type == Token_Types.TOK_IDENTIFIER)){
+            return
+        }
+        console.log("TOK_IDENTIFIER",this.Token_List[this.currentIndex]);
+        this.advance();
+        if(!(this.Token_List[this.currentIndex].type == Token_Types.TOK_LEFT_PARENTHESIS)){
+            return
+        }
+        console.log("TOK_LEFT_PARENTHESIS",this.Token_List[this.currentIndex]);
+        this.advance();
+        if(!(this.Token_List[this.currentIndex].type == Token_Types.TOK_RIGHT_PARENTHESIS)){
+            return
+        }
+        console.log("TOK_RIGHT_PARENTHESIS",this.Token_List[this.currentIndex]);
+        this.advance();
+        if(!(this.Token_List[this.currentIndex].type == Token_Types.TOK_OPENING_BRACE)){
+            return
+        }
+        console.log("TOK_OPENING_BRACE",this.Token_List[this.currentIndex]);
+        this.advance();
+        if(!(this.Token_List[this.currentIndex].type == Token_Types.TOK_CLOSING_BRACE)){
+            return
+        }
+        console.log("TOK_CLOSING_BRACE",this.Token_List[this.currentIndex]);
+        this.advance();
+        console.log("Function declaration completed");
     }
 
     public parse(){
@@ -54,9 +75,14 @@ class Parser{
                     this.advance();
                     this.variable_Declaration();
                     break;
+                case Token_Types.TOK_FUNC:
+                    console.log("Function found");
+                    this.advance();
+                    this.function_Declaration();
+                    break;
                 default:
-                    console.log(`Unknown token ${this.Token_List[this.currentIndex]}`);
-                    return
+                    console.log(`Unknown token ${this.Token_List[this.currentIndex].value}`);
+                    continue
             }
         }
     }

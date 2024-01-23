@@ -5,19 +5,19 @@ Welcome to the LiteScript Interpreter, a project dedicated to building an interp
 
 ```bash
 import { Lexer } from "./lexer"
-import { Parser } from "./parser";
+import { Parser } from "./parser"
 
 let code = `let ab = 88`
 
 
-let intre = new Lexer(code);
+let Interpreter = new Lexer(code);
 
-let tok = intre.Tokenize();
+let tok = Interpreter.Tokenize();
 
 
 console.log(tok)
-let par= new Parser(tok);
+let parser= new Parser(tok);
 
-par.parse()
+parser.parse()
 
 ```
