@@ -1,6 +1,7 @@
 enum Token_Types{
     TOK_IDENTIFIER,
     TOK_LET,
+    TOK_FUNC,
     TOK_NUMBER,
     TOK_STRING,
     TOK_EQUAL,

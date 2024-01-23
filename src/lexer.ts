@@ -36,11 +36,12 @@ class Lexer{
                 let token = this.data.substring(start_Index,i)
 
                 if(token == "let"){
-                list.push(new Token(Token_Types.TOK_LET,undefined))
+                list.push(new Token(Token_Types.TOK_LET,token))
 
                 }
-
-                list.push(new Token(Token_Types.TOK_IDENTIFIER,token))
+                else{ 
+                    list.push(new Token(Token_Types.TOK_IDENTIFIER,token))
+                }
 
                 continue
             }
@@ -60,7 +61,7 @@ class Lexer{
             }
 
             if(this.data[i] == "="){
-                list.push(new Token(Token_Types.TOK_EQUAL,undefined))
+                list.push(new Token(Token_Types.TOK_EQUAL,this.data[i]))
                 continue
             }
         }
